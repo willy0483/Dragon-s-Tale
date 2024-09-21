@@ -1,0 +1,66 @@
+// Define color variables
+$primary-color: #6c4f3d; // Dark brown
+$secondary-color: #b38f6d; // Tan
+$accent-color: #8a6d5a; // Light brown
+$highlight-color: #c0a172; // Gold
+$text-color: #ffffff; // White for text
+$background-color: #2e2a25; // Dark background
+$link-color: #d9a74d; // Gold link color
+$link-hover-color: #f2d4a3; // Lighter gold for hover effect
+
+// Body styles
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: "Garamond", serif; // Medieval-style font
+}
+
+// Header styles
+header {
+  background-color: $primary-color;
+  padding: 20px;
+  text-align: center;
+
+  h1 {
+    color: $highlight-color;
+  }
+}
+
+// Navigation styles
+nav {
+  background-color: $secondary-color;
+
+  a {
+    color: $link-color;
+    text-decoration: none;
+    padding: 10px;
+
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+}
+
+// Button styles
+button {
+  background-color: $highlight-color;
+  color: $text-color;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $accent-color;
+  }
+}
+
+// Footer styles
+footer {
+  background-color: $primary-color;
+  padding: 20px;
+  text-align: center;
+
+  p {
+    color: $text-color;
+  }
+}
