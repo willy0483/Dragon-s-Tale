@@ -24,7 +24,7 @@ function buildMain() {
             <figcaption class="dragon-caption">
               <h1 class="dragon-title">Dragon's Tale</h1>
               <p class="dragon-description">
-                En kæmpe kæmper for at overleve mod en hær af drager i et mysterisk farvestrålende hav.
+              En knight kæmper for at overleve mod en hær af drager i magiske, farverige skove og bjerge.
               </p>
               <button class="learn-more-btn" onclick="buildView()">Lære mere</button>
               <button class="share-btn" onclick="share()">Del</button>
@@ -61,29 +61,29 @@ function Historie() {
 
 function buildLearnMore() {
   const myHtml = `
-<div class="dragon-container">
-  <img
-    src="assets/images/Uploads/sr2c37871d0a495.webp"
-    alt="dragon"
-    class="dragon-image-learn-more"
-  />
-  <div class="dragon-content">
-    <section class="learn-more-section">
-      <h2 class="learn-more-title">
-        Dragon's Tale: En historie om en kæmpe mod drager
-      </h2>
-      <article class="learn-more-article">
-        <p>
-          I "Dragon's Tale" følger vi en tapper knight, der står over for den
-          frygtelige trussel fra en horde af drager. I sit rige, som er fyldt
-          med magi og mystik, er han klædt i rustning som en Tempelridder, klar
-          til at forsvare sit folk. Hans mod og ære driver ham til at kæmpe mod
-          det onde og bevare freden i landet.
-        </p>
-      </article>
-    </section>
-  </div>
-</div>
+    <div class="dragon-container">
+      <img
+        src="assets/images/Uploads/sr2c37871d0a495.webp"
+        alt="dragon"
+        class="dragon-image-learn-more"
+      />
+      <div class="dragon-content">
+        <section class="learn-more-section">
+          <h2 class="learn-more-title">
+            Dragon's Tale: En historie om en kæmpe mod drager
+          </h2>
+          <article class="learn-more-article">
+            <p>
+              I "Dragon's Tale" følger vi en tapper knight, der kæmper for at
+              overleve mod en horde af drager i magiske, farverige skove og
+              bjerge. Klædt i rustning som en Tempelridder, er han klar til at
+              forsvare sit folk. Hans mod og ære driver ham til at bekæmpe det
+              onde og bevare freden i sit rige, der er fyldt med magi og mystik.
+            </p>
+          </article>
+        </section>
+      </div>
+    </div>
     `;
 
   mainContainer.innerHTML += myHtml;
@@ -129,10 +129,17 @@ function scrolltop() {
   const TopDiv = document.createElement("div");
   TopDiv.classList.add("top-button-container");
   TopDiv.innerHTML = `
-        <button onclick="window.scrollTo(0, 0)">
+        <button onclick="scrollToTop()">
           <img src="assets/images/Svg/download.svg" alt="back to top" />
         </button>
       `;
   document.body.appendChild(TopDiv);
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 }
 // #endregion
