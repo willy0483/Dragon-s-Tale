@@ -123,7 +123,11 @@ function buildHistorie() {
   mainContainer.innerHTML += myHtml;
   const newHiddenElements = mainContainer.querySelectorAll(".hiddenrigth");
   newHiddenElements.forEach((el) => observer.observe(el));
+
+  const newHiddenElementsleft = mainContainer.querySelectorAll(".hiddenleft");
+  newHiddenElementsleft.forEach((el) => observer.observe(el));
 }
+
 // #endregion
 
 // #region Scroll to Top Button
@@ -156,8 +160,9 @@ const observer = new IntersectionObserver((entries) => {
     ); // Debugging log
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
     }
+    // else {
+    //   entry.target.classList.remove("show");
+    // }
   });
 });
