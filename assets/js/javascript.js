@@ -61,7 +61,7 @@ function Historie() {
 
 function buildLearnMore() {
   const myHtml = `
-    <div class="dragon-container">
+    <div class="dragon-container hiddenleft">
       <img
         src="assets/images/Uploads/sr2c37871d0a495.webp"
         alt="dragon"
@@ -84,14 +84,14 @@ function buildLearnMore() {
         </section>
       </div>
     </div>
-    `;
+  `;
 
   mainContainer.innerHTML += myHtml;
 }
 
 function buildHistorie() {
   const myHtml = `
-        <section class="knight-section">
+        <section class="knight-section hiddenrigth">
         <article class="knight-article">
           <h2 class="knight-title">Knight</h2>
           <p class="knight-description">
@@ -121,6 +121,8 @@ function buildHistorie() {
     `;
 
   mainContainer.innerHTML += myHtml;
+  const newHiddenElements = mainContainer.querySelectorAll(".hiddenrigth");
+  newHiddenElements.forEach((el) => observer.observe(el));
 }
 // #endregion
 
@@ -143,3 +145,19 @@ function scrollToTop() {
   });
 }
 // #endregion
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(
+      "Observed element:",
+      entry.target,
+      "Is intersecting:",
+      entry.isIntersecting
+    ); // Debugging log
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+});
