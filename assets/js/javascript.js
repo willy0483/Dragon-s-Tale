@@ -43,6 +43,17 @@ function buildView() {
   resetView();
   learnMore();
   Historie();
+  gallery();
+
+  getElements();
+}
+
+function getElements() {
+  const newHiddenElements = mainContainer.querySelectorAll(".hiddenrigth");
+  newHiddenElements.forEach((el) => observer.observe(el));
+
+  const newHiddenElementsleft = mainContainer.querySelectorAll(".hiddenleft");
+  newHiddenElementsleft.forEach((el) => observer.observe(el));
 }
 
 function resetView() {
@@ -57,6 +68,10 @@ function learnMore() {
 
 function Historie() {
   buildHistorie();
+}
+
+function gallery() {
+  buildGallery();
 }
 
 function buildLearnMore() {
@@ -113,19 +128,43 @@ function buildHistorie() {
           </p>
         </article>
         <img
-          src="assets/images/Uploads/cba1cffcdf4e4c9ea6ec9861d41dbabb.jpg"
+          src="assets/images/Uploads/knight.jpg"
           alt="Knight"
           class="knight-image"
         />
       </section>
     `;
-
   mainContainer.innerHTML += myHtml;
-  const newHiddenElements = mainContainer.querySelectorAll(".hiddenrigth");
-  newHiddenElements.forEach((el) => observer.observe(el));
+}
 
-  const newHiddenElementsleft = mainContainer.querySelectorAll(".hiddenleft");
-  newHiddenElementsleft.forEach((el) => observer.observe(el));
+function buildGallery() {
+  const myHtml = `
+<div class="gallery-container">
+  <div class="image-container">
+    <img
+      src="assets/images/Uploads/wizard.jpg"
+      alt="wizard casting a spell"
+      class="gallery-image hiddenleft"
+    />
+    <img
+      src="assets/images/Uploads/sword.jpg"
+      alt="ancient sword on display"
+      class="gallery-image hiddenleft"
+    />
+    <img
+      src="assets/images/Uploads/skeleton.jpeg"
+      alt="skeleton in armor"
+      class="gallery-image hiddenleft"
+    />
+    <img
+      src="assets/images/Uploads/dragonfight.jpg"
+      alt="battle with a dragon"
+      class="gallery-image hiddenleft"
+    />
+  </div>
+</div>
+`;
+  mainContainer.innerHTML += myHtml;
 }
 
 // #endregion
@@ -161,7 +200,7 @@ const observer = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
     }
-    // else {
+    // else { // Uncomment this block to remove the class when the element is not intersecting
     //   entry.target.classList.remove("show");
     // }
   });
