@@ -145,24 +145,32 @@ function buildGallery() {
       src="assets/images/Uploads/wizard.jpg"
       alt="wizard casting a spell"
       class="gallery-image hiddenleft"
+      id="gallery-image1"
+
     />
     <img
       src="assets/images/Uploads/sword.jpg"
       alt="ancient sword on display"
       class="gallery-image hiddenleft"
+      id="gallery-image2"
+
     />
     <img
       src="assets/images/Uploads/skeleton.jpeg"
       alt="skeleton in armor"
       class="gallery-image hiddenleft"
+      id="gallery-image3"
+
     />
     <img
       src="assets/images/Uploads/dragonfight.jpg"
       alt="battle with a dragon"
       class="gallery-image hiddenleft"
+      id="gallery-image4"
     />
   </div>
 </div>
+
 `;
   mainContainer.innerHTML += myHtml;
 }
@@ -191,12 +199,12 @@ function scrollToTop() {
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log(
-      "Observed element:",
-      entry.target,
-      "Is intersecting:",
-      entry.isIntersecting
-    ); // Debugging log
+    // console.log(
+    //   "Observed element:",
+    //   entry.target,
+    //   "Is intersecting:",
+    //   entry.isIntersecting
+    // ); // Debugging log
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
     }
