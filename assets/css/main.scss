@@ -33,6 +33,11 @@ $link-hover-color: #f2d4a3; // Lighter gold for hover effect
   transform: translateX(-100%);
   transition: all 3s ease-in-out;
 }
+.hiddenfadein {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 3s ease-in-out;
+}
 
 .show {
   opacity: 1;
@@ -64,6 +69,7 @@ button {
     background-color: $accent-color;
   }
 }
+
 // #endregion
 // #region Figure Styles
 figure {
@@ -138,7 +144,6 @@ figure {
     max-width: 500px;
 
     .learn-more-section {
-      background-color: #2e2a25cc;
       padding: 1rem;
       border-radius: 5px;
       margin-top: auto;
@@ -237,9 +242,12 @@ figure {
 // #region Gallery Styles
 
 .gallery-container {
-  margin: 2rem 0;
+  margin: 15rem 0;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 2rem;
 
   .image-container {
     display: flex;
@@ -247,37 +255,84 @@ figure {
     justify-content: center;
     gap: 30px;
 
+    /* Image styling */
     img {
       width: 300px;
-      height: 300px;
+      height: 500px;
       object-fit: cover;
-      object-position: bottom;
-      border-radius: 8px;
+      object-position: center;
+      border-radius: 12px;
       opacity: 0;
-      filter: blur(5px);
-      transform: translateX(-100%);
+      filter: blur(10px);
+      transform: translateY(30%);
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      cursor: pointer;
 
       &:nth-child(1) {
-        transition-delay: 0s;
-      }
-      &:nth-child(2) {
-        transition-delay: 0.2s;
-      }
-      &:nth-child(3) {
         transition-delay: 0.4s;
       }
+      &:nth-child(2) {
+        transition-delay: 0.8s;
+      }
+      &:nth-child(3) {
+        transition-delay: 1.2s;
+      }
       &:nth-child(4) {
-        transition-delay: 0.6s;
+        transition-delay: 1.6s;
       }
 
       &.show {
         opacity: 1;
         filter: blur(0);
-        transform: translateX(0);
-        object-position: top;
+        transform: translateY(0);
       }
     }
   }
 }
 
+// #endregion
+
+// #region Darkforest
+
+.darkforest-section {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $padding;
+  gap: $gap;
+  flex-wrap: wrap; // Ensure responsiveness
+
+  .darkforest-image {
+    flex-basis: 40%;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-color 0px 22px 70px 4px;
+    transition: transform 0.3s;
+  }
+
+  .darkforest-article {
+    background-color: $background-color;
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 50%;
+    max-width: 500px;
+
+    .darkforest-title {
+      font-size: $font-size-title;
+      color: $highlight-color;
+      margin: 1rem 0;
+    }
+
+    .darkforest-description {
+      font-size: $font-size-description;
+    }
+  }
+}
 // #endregion
