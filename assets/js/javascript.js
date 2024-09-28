@@ -44,6 +44,7 @@ function buildView() {
   learnMore();
   Historie();
   gallery();
+  darkforest();
 
   getElements();
 }
@@ -54,6 +55,10 @@ function getElements() {
 
   const newHiddenElementsleft = mainContainer.querySelectorAll(".hiddenleft");
   newHiddenElementsleft.forEach((el) => observer.observe(el));
+
+  const newHiddenElementsFadein =
+    mainContainer.querySelectorAll(".hiddenfadein");
+  newHiddenElementsFadein.forEach((el) => observer.observe(el));
 }
 
 function resetView() {
@@ -72,6 +77,10 @@ function Historie() {
 
 function gallery() {
   buildGallery();
+}
+
+function darkforest() {
+  buildDarkforest();
 }
 
 function buildLearnMore() {
@@ -175,6 +184,29 @@ function buildGallery() {
   mainContainer.innerHTML += myHtml;
 }
 
+function buildDarkforest() {
+  const myHtml = `
+<section class="darkforest-section hiddenfadein">
+  <img src="assets/images/Uploads/dark forest.jpg" alt="Dark Forest" class="darkforest-image" />
+  <article class="darkforest-article">
+    <header>
+      <h2 class="darkforest-title">Dark Forest: En Historie om en Kæmpe Mod Mørkets Væsner</h2>
+    </header>
+    <p class="darkforest-description">
+      I "Darkforest" følger vi en tapper knight, der må kæmpe for overlevelse i en forbandet, mørklagt skov fyldt med dæmoniske væsner. Den mørke skov strækker sig uendeligt og er hjemsted for skygger, der hvisker ondskabens navn, og uhyrer, der lurer i skovens tætte tåge.
+    </p>
+    <p class="darkforest-description">
+      Iført en slidt, men ærefuld rustning, kæmper knighten for at redde sit hjem fra den evige nat, som truer med at opsluge hele riget. Han må bruge både styrke og snuhed for at bekæmpe mørkets væsner og navigere gennem skovens farer.
+    </p>
+    <p class="darkforest-description">
+      I denne kamp mod ondskaben må knighten bevare håbet, for kun hans tapre gerninger kan forhindre mørket i at sprede sig og opsluge alt lys. Han er rigets sidste håb i en verden, der langsomt falder i skygge.
+    </p>
+  </article>
+</section>
+`;
+  mainContainer.innerHTML += myHtml;
+}
+
 // #endregion
 
 // #region Scroll to Top Button
@@ -199,12 +231,6 @@ function scrollToTop() {
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    // console.log(
-    //   "Observed element:",
-    //   entry.target,
-    //   "Is intersecting:",
-    //   entry.isIntersecting
-    // ); // Debugging log
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
     }

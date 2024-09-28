@@ -33,6 +33,11 @@ $link-hover-color: #f2d4a3; // Lighter gold for hover effect
   transform: translateX(-100%);
   transition: all 3s ease-in-out;
 }
+.hiddenfadein {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 3s ease-in-out;
+}
 
 .show {
   opacity: 1;
@@ -64,6 +69,7 @@ button {
     background-color: $accent-color;
   }
 }
+
 // #endregion
 // #region Figure Styles
 figure {
@@ -236,7 +242,7 @@ figure {
 // #region Gallery Styles
 
 .gallery-container {
-  margin: 5rem 0;
+  margin: 15rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -284,4 +290,49 @@ figure {
   }
 }
 
+// #endregion
+
+// #region Darkforest
+
+.darkforest-section {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $padding;
+  gap: $gap;
+  flex-wrap: wrap; // Ensure responsiveness
+
+  .darkforest-image {
+    flex-basis: 40%;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-color 0px 22px 70px 4px;
+    transition: transform 0.3s;
+  }
+
+  .darkforest-article {
+    background-color: $background-color;
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 50%;
+    max-width: 500px;
+
+    .darkforest-title {
+      font-size: $font-size-title;
+      color: $highlight-color;
+      margin: 1rem 0;
+    }
+
+    .darkforest-description {
+      font-size: $font-size-description;
+    }
+  }
+}
 // #endregion
