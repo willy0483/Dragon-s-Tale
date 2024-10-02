@@ -1,0 +1,53 @@
+@use "Global" as G;
+// #region Gallery Styles
+
+.gallery-container {
+    margin: 15rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 2rem;
+  
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+  
+      /* Image styling */
+      img {
+        width: 300px;
+        height: 500px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 12px;
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(30%);
+        transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        cursor: pointer;
+  
+        &:nth-child(1) {
+          transition-delay: 0.4s;
+        }
+        &:nth-child(2) {
+          transition-delay: 0.8s;
+        }
+        &:nth-child(3) {
+          transition-delay: 1.2s;
+        }
+        &:nth-child(4) {
+          transition-delay: 1.6s;
+        }
+  
+        &.show {
+          opacity: 1;
+          filter: blur(0);
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+  
+  // #endregion

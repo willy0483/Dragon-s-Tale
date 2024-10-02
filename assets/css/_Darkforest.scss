@@ -1,0 +1,46 @@
+@use "Global" as G;
+// #region Darkforest
+
+.darkforest-section {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: G.$padding;
+    gap: G.$gap;
+    flex-wrap: wrap;
+  
+    .darkforest-image {
+      flex-basis: 40%;
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: G.$border-radius;
+      box-shadow: G.$box-shadow-color 0px 22px 70px 4px;
+      transition: transform 0.3s;
+    }
+  
+    .darkforest-article {
+      padding: 1rem;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-basis: 50%;
+      max-width: 500px;
+  
+      .darkforest-title {
+        font-size: G.$font-size-title;
+        color: G.$highlight-color;
+        margin: 1rem 0;
+      }
+  
+      .darkforest-description {
+        font-size: G.$font-size-description;
+        color: G.$text-color-dark;
+      }
+    }
+  }
+  // #endregion
+  
