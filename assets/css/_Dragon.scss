@@ -1,0 +1,49 @@
+@use "Global" as G;
+// #region Dragon Section
+.dragon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 2rem;
+  
+    .dragon-image-learn-more {
+      flex-basis: 40%;
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: #0000008f 0px 22px 70px 4px;
+    }
+  
+    .dragon-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-basis: 50%;
+      max-width: 500px;
+  
+      .learn-more-section {
+        padding: 1rem;
+        border-radius: 5px;
+        margin-top: auto;
+        margin-bottom: auto;
+  
+        .learn-more-title {
+          font-size: 24px;
+          color: G.$highlight-color;
+          margin: 1rem 0;
+        }
+  
+        .learn-more-article {
+          p {
+            font-size: 16px;
+            color: G.$text-color-dark;
+            margin: 1rem 0;
+          }
+        }
+      }
+    }
+  }
+  // #endregion

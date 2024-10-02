@@ -1,85 +1,18 @@
-// #region Main Container Setup
-const mainContainer = document.createElement("section");
-mainContainer.classList.add("main-container");
-mainContainer.id = "main-container";
+import { mainContainer } from "../MainContainer/MainContainer.js";
 
-buildMain();
-document.body.appendChild(mainContainer);
-// #endregion
-
-// #region Build Main Section
-function buildMain() {
-  const container = document.createElement("section");
-  const myHtml = `
-          <figure class="dragon-tale-figure">
-            <div class="item">
-              <div class="img-wrap">
-                <img 
-                  src="assets/images/Uploads/pixil-layer-Background.png" 
-                  alt="Pixel art of a dragon" 
-                  class="dragon-image-main"
-                />
-              </div>
-            </div>
-            <figcaption class="dragon-caption">
-              <h1 class="dragon-title">Dragon's Tale</h1>
-              <p class="dragon-description">
-              En knight kæmper for at overleve mod en hær af drager i magiske, farverige skove og bjerge.
-              </p>
-              <button class="learn-more-btn" onclick="buildView()">Lære mere</button>
-              <button class="share-btn" onclick="share()">Del</button>
-            </figcaption>
-          </figure>
-        `;
-  scrolltop();
-
-  container.innerHTML = myHtml;
-  document.body.appendChild(container);
-}
-// #endregion
-
-// #region View Management
-function buildView() {
-  resetView();
-  learnMore();
-  Historie();
-  gallery();
-  darkforest();
-
-  getElements();
-}
-
-function getElements() {
-  const newHiddenElements = mainContainer.querySelectorAll(".hiddenrigth");
-  newHiddenElements.forEach((el) => observer.observe(el));
-
-  const newHiddenElementsleft = mainContainer.querySelectorAll(".hiddenleft");
-  newHiddenElementsleft.forEach((el) => observer.observe(el));
-
-  const newHiddenElementsFadein =
-    mainContainer.querySelectorAll(".hiddenfadein");
-  newHiddenElementsFadein.forEach((el) => observer.observe(el));
-}
-
-function resetView() {
-  mainContainer.innerHTML = "";
-}
-// #endregion
-
-// #region Learning and Story Sections
-function learnMore() {
+export function learnMore() {
   buildLearnMore();
 }
 
-function Historie() {
+export function Historie() {
   buildHistorie();
 }
 
-function gallery() {
+export function gallery() {
   buildGallery();
 }
 
-function darkforest() {
+export function darkforest() {
   buildDarkforest();
 }
 
@@ -109,15 +42,14 @@ function buildLearnMore() {
       </div>
     </div>
   `;
-
   mainContainer.innerHTML += myHtml;
 }
 
 function buildHistorie() {
   const myHtml = `
-        <section class="knight-section hiddenrigth">
-        <article class="knight-article">
-          <h2 class="knight-title">Knight</h2>
+    <section class="knight-section hiddenrigth">
+      <article class="knight-article">
+        <h2 class="knight-title">Knight</h2>
           <p class="knight-description">
             I "Dragon's Tale" er en knight en tapper kriger, der beskytter sit
             rige mod truslen fra dragerne. Iført den karakteristiske rustning fra
@@ -135,21 +67,21 @@ function buildHistorie() {
             redde deres folk fra fare og for at sikre, at legenderne om deres
             heroiske gerninger vil leve videre.
           </p>
-        </article>
-        <img
-          src="assets/images/Uploads/knight.jpg"
-          alt="Knight"
-          class="knight-image"
-        />
-      </section>
-    `;
+      </article>
+      <img
+        src="assets/images/Uploads/knight.jpg"
+        alt="Knight"
+        class="knight-image"
+      />
+    </section>
+  `;
   mainContainer.innerHTML += myHtml;
 }
 
 function buildGallery() {
   const myHtml = `
-<div class="gallery-container">
-  <div class="image-container">
+    <div class="gallery-container">
+<div class="image-container">
     <img
       src="assets/images/Uploads/wizard.jpg"
       alt="wizard casting a spell"
@@ -178,20 +110,17 @@ function buildGallery() {
       id="gallery-image4"
     />
   </div>
-</div>
-
-`;
+    </div>
+  `;
   mainContainer.innerHTML += myHtml;
 }
 
 function buildDarkforest() {
   const myHtml = `
-<section class="darkforest-section hiddenfadein">
-  <img src="assets/images/Uploads/dark forest.jpg" alt="Dark Forest" class="darkforest-image" />
-  <article class="darkforest-article">
-    <header>
-      <h2 class="darkforest-title">Dark Forest: En Historie om en Kæmpe Mod Mørkets Væsner</h2>
-    </header>
+    <section class="darkforest-section hiddenfadein">
+      <img src="assets/images/Uploads/dark forest.jpg" alt="Dark Forest" class="darkforest-image" />
+      <article class="darkforest-article">
+        <h2 class="darkforest-title">Dark Forest: En Historie om en Kæmpe Mod Mørkets Væsner</h2>
     <p class="darkforest-description">
       I "Darkforest" følger vi en tapper knight, der må kæmpe for overlevelse i en forbandet, mørklagt skov fyldt med dæmoniske væsner. Den mørke skov strækker sig uendeligt og er hjemsted for skygger, der hvisker ondskabens navn, og uhyrer, der lurer i skovens tætte tåge.
     </p>
@@ -200,42 +129,8 @@ function buildDarkforest() {
     </p>
     <p class="darkforest-description">
       I denne kamp mod ondskaben må knighten bevare håbet, for kun hans tapre gerninger kan forhindre mørket i at sprede sig og opsluge alt lys. Han er rigets sidste håb i en verden, der langsomt falder i skygge.
-    </p>
-  </article>
-</section>
-`;
+    </p>      </article>
+    </section>
+  `;
   mainContainer.innerHTML += myHtml;
 }
-
-// #endregion
-
-// #region Scroll to Top Button
-function scrolltop() {
-  const TopDiv = document.createElement("div");
-  TopDiv.classList.add("top-button-container");
-  TopDiv.innerHTML = `
-        <button onclick="scrollToTop()">
-          <img src="assets/images/Svg/download.svg" alt="back to top" />
-        </button>
-      `;
-  document.body.appendChild(TopDiv);
-}
-
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-}
-// #endregion
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-    // else { // Uncomment this block to remove the class when the element is not intersecting
-    //   entry.target.classList.remove("show");
-    // }
-  });
-});
