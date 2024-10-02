@@ -7,7 +7,6 @@
     align-items: center;
     padding: 2rem;
     gap: 20px;
-  
     .knight-image {
       flex-basis: 40%;
       max-width: 400px;
@@ -17,7 +16,6 @@
       border-radius: 8px;
       box-shadow: #0000008f 0px 22px 70px 4px;
     }
-  
     .knight-article {
       background-color: #2e2a25cc;
       padding: 1rem;
@@ -27,13 +25,11 @@
       justify-content: center;
       flex-basis: 50%;
       max-width: 500px;
-  
       .knight-title {
         font-size: 24px;
         color: G.$highlight-color;
         margin: 1rem 0;
       }
-  
       .knight-description {
         font-size: 16px;
         color: G.$text-color-dark;

@@ -15,6 +15,9 @@ export function gallery() {
 export function darkforest() {
   buildDarkforest();
 }
+export function deathKnight() {
+  buildDeathKnight();
+}
 
 function buildLearnMore() {
   const myHtml = `
@@ -132,5 +135,16 @@ function buildDarkforest() {
     </p>      </article>
     </section>
   `;
+  mainContainer.innerHTML += myHtml;
+}
+
+function buildDeathKnight() {
+  const myHtml = `
+    <section class="deathKnight">
+    <div class="deathKnight-image">
+    <img src="assets/images/Uploads/deathKnight.jpg" alt="deathKnight" />
+    </div>
+    </section>
+    `;
   mainContainer.innerHTML += myHtml;
 }

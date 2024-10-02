@@ -5,6 +5,7 @@ import {
   Historie,
   gallery,
   darkforest,
+  deathKnight,
 } from "../StorySections/StorySections.js";
 
 export function buildView() {
@@ -13,6 +14,7 @@ export function buildView() {
   Historie();
   gallery();
   darkforest();
+  deathKnight();
 
   getElements();
 }
